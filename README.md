@@ -23,7 +23,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: hexlet-components/shared-workflows/.github/workflows/dependabot-automerge.yml@main
+    uses: hexlet-components/shared-workflows/.github/workflows/dependabot-automerge.yml@7b84d02d32ddeb634561cae27bdb8e4d77a43867 # v1.0.0
 ```
+
+Вызов закрепляется по SHA тега с версией в комментарии. Линтер `jactionlint` с правилом `unpinned-uses` отвергает `@main`, а такое закрепление Dependabot поднимает сам после нового тега.
 
 Ruleset страховочный шаг пока не видит, он читает только классическую защиту ветки. В репозитории, где обязательные проверки заданы ruleset, workflow пропустит слияние.
